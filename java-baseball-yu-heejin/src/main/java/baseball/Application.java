@@ -2,18 +2,18 @@ package baseball;
 
 import camp.nextstep.edu.missionutils.Console;
 import camp.nextstep.edu.missionutils.Randoms;
-
-import java.nio.channels.spi.AbstractSelectionKey;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Application {
     private static final int NUMBER_SIZE = 3;
-    private static int[] gameResultCount = {0, 0};
+    private static int[] gameResultCount;
     private static final int STRIKE_INDEX = 0;
     private static final int BALL_INDEX = 1;
     private static List<Integer> randomNumbers;
     private static final char CHAR_TO_NUMBER = '0';
+    private static String gameContinueAnswer = "1";
+
 
     public static void makeRandomNumber() {
         randomNumbers = new ArrayList<>();
@@ -41,7 +41,6 @@ public class Application {
     public static void checkGameResult(List<Integer> randomNumbers, String number) {
         for (int i = 0; i < NUMBER_SIZE; i++) {
             int dividedNumber = returnDividedNumber(number, i);
-            System.out.println(dividedNumber);
             if (randomNumbers.get(i) == dividedNumber) {
                 gameResultCount[STRIKE_INDEX]++;
                 continue;
@@ -62,13 +61,19 @@ public class Application {
         makeRandomNumber();
         System.out.println(randomNumbers);
 
-        while (gameResultCount[STRIKE_INDEX] < 3) {
+        while (gameContinueAnswer.equals("1")) {
+            gameResultCount = new int[]{0, 0};
             System.out.print("숫자를 입력해주세요 : ");
             String number = Console.readLine();
 
             checkGameResult(randomNumbers, number);
 
             printGameResult();
+
+            if (gameResultCount[STRIKE_INDEX] == 3) {
+                System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+                gameContinueAnswer = Console.readLine();
+            }
         }
     }
 }

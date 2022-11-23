@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="baseball.ApplicationTest" tests="2" skipped="0" failures="2" errors="0" timestamp="2022-11-23T10:31:06" hostname="yuhuijin-ui-MacBookAir.local" time="1.234">
+<testsuite name="baseball.ApplicationTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-11-23T11:38:58" hostname="yuhuijin-ui-MacBookAir.local" time="1.187">
   <properties/>
-  <testcase name="게임종료_후_재시작()" classname="baseball.ApplicationTest" time="1.196">
-    <failure message="java.lang.AssertionError: &#10;Expecting actual:&#10;  &quot;&quot;&#10;to contain:&#10;  [&quot;낫싱&quot;, &quot;3스트라이크&quot;, &quot;1볼 1스트라이크&quot;, &quot;3스트라이크&quot;, &quot;게임 종료&quot;]&#10;but could not find:&#10;  [&quot;낫싱&quot;, &quot;3스트라이크&quot;, &quot;1볼 1스트라이크&quot;, &quot;게임 종료&quot;]&#10; " type="java.lang.AssertionError">java.lang.AssertionError: 
-Expecting actual:
-  &quot;&quot;
-to contain:
-  [&quot;낫싱&quot;, &quot;3스트라이크&quot;, &quot;1볼 1스트라이크&quot;, &quot;3스트라이크&quot;, &quot;게임 종료&quot;]
-but could not find:
-  [&quot;낫싱&quot;, &quot;3스트라이크&quot;, &quot;1볼 1스트라이크&quot;, &quot;게임 종료&quot;]
- 
-	at baseball.ApplicationTest.lambda$게임종료_후_재시작$0(ApplicationTest.java:17)
+  <testcase name="게임종료_후_재시작()" classname="baseball.ApplicationTest" time="1.187">
+    <failure message="java.lang.StringIndexOutOfBoundsException: String index out of range: 1" type="java.lang.StringIndexOutOfBoundsException">java.lang.StringIndexOutOfBoundsException: String index out of range: 1
+	at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:47)
+	at java.base/java.lang.String.charAt(String.java:693)
+	at baseball.Application.returnDividedNumber(Application.java:55)
+	at baseball.Application.checkGameResult(Application.java:43)
+	at baseball.Application.main(Application.java:69)
+	at baseball.ApplicationTest.runMain(ApplicationTest.java:33)
+	at camp.nextstep.edu.missionutils.test.NsTest.run(NsTest.java:35)
+	at baseball.ApplicationTest.lambda$게임종료_후_재시작$0(ApplicationTest.java:16)
 	at camp.nextstep.edu.missionutils.test.Assertions.lambda$assertRandomTest$4(Assertions.java:89)
 	at org.junit.jupiter.api.AssertTimeout.lambda$assertTimeoutPreemptively$2(AssertTimeout.java:102)
 	at org.junit.jupiter.api.AssertTimeout.lambda$assertTimeoutPreemptively$4(AssertTimeout.java:138)
@@ -20,20 +20,14 @@ but could not find:
 	at java.base/java.lang.Thread.run(Thread.java:829)
 </failure>
   </testcase>
-  <testcase name="예외_테스트()" classname="baseball.ApplicationTest" time="0.031">
-    <failure message="java.lang.AssertionError: &#10;Expecting code to raise a throwable." type="java.lang.AssertionError">java.lang.AssertionError: 
-Expecting code to raise a throwable.
-	at baseball.ApplicationTest.lambda$예외_테스트$2(ApplicationTest.java:26)
-	at org.junit.jupiter.api.AssertTimeout.lambda$assertTimeoutPreemptively$2(AssertTimeout.java:102)
-	at org.junit.jupiter.api.AssertTimeout.lambda$assertTimeoutPreemptively$4(AssertTimeout.java:138)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:829)
-</failure>
-  </testcase>
-  <system-out><![CDATA[
-
+  <system-out><![CDATA[숫자 야구 게임을 시작합니다.
+[1, 3, 5]
+숫자를 입력해주세요 : 낫싱
+숫자를 입력해주세요 : 3스트라이크
+게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.
+숫자를 입력해주세요 : 1볼
+숫자를 입력해주세요 : 1볼
+숫자를 입력해주세요 :
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
