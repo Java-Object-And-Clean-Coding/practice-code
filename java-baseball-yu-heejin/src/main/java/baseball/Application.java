@@ -7,11 +7,12 @@ import java.util.List;
 
 public class Application {
     private static final int NUMBER_SIZE = 3;
-    private static int[] gameResultCount;
     private static final int STRIKE_INDEX = 0;
     private static final int BALL_INDEX = 1;
-    private static List<Integer> randomNumbers = new ArrayList<>();
     private static final char CHAR_TO_NUMBER = '0';
+
+    private static int[] gameResultCount;
+    private static List<Integer> randomNumbers = new ArrayList<>();
     private static String gameContinueAnswer = "1";
 
 
@@ -76,13 +77,26 @@ public class Application {
 
     public static void inputGameContinueAnswer() {
         if (gameResultCount[STRIKE_INDEX] == 3) {
-            System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
-            System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+            printSuccessGameMessage();
+
+            printInputGameContinueAnswerMessage();
             gameContinueAnswer = Console.readLine();
 
-            if (gameContinueAnswer.equals("1")) {
-                randomNumbers.clear();
-            }
+            clearRandomNumberByGameContinueAnswer();
+        }
+    }
+
+    public static void printSuccessGameMessage() {
+        System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+    }
+
+    public static void printInputGameContinueAnswerMessage() {
+        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+    }
+
+    public static void clearRandomNumberByGameContinueAnswer() {
+        if (gameContinueAnswer.equals("1")) {
+            randomNumbers.clear();
         }
     }
 
