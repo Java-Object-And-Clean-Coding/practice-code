@@ -11,10 +11,12 @@ public class Application {
     private static final int NUMBER_SIZE = 3;
     private static int[] gameResultCount = {0, 0};
     private static final int STRIKE_INDEX = 0;
-    private static final int BALL_INDEX = 0;
+    private static final int BALL_INDEX = 1;
+    private static List<Integer> randomNumbers;
+    private static final char CHAR_TO_NUMBER = '0';
 
-    public static List<Integer> makeRandomNumber() {
-        List<Integer> randomNumbers = new ArrayList<>();
+    public static void makeRandomNumber() {
+        randomNumbers = new ArrayList<>();
 
         while (randomNumbers.size() < 3) {
             int randomNumber = Randoms.pickNumberInRange(1, 9);
@@ -22,8 +24,6 @@ public class Application {
                 randomNumbers.add(randomNumber);
             }
         }
-
-        return randomNumbers;
     }
 
     public static void printGameResult() {
@@ -38,26 +38,33 @@ public class Application {
         }
     }
 
-    public static void checkGameResult(List<Integer> randomNumbers, int number) {
+    public static void checkGameResult(List<Integer> randomNumbers, String number) {
         for (int i = 0; i < NUMBER_SIZE; i++) {
-            if (randomNumbers.get(i) == number) {
+            int dividedNumber = returnDividedNumber(number, i);
+            System.out.println(dividedNumber);
+            if (randomNumbers.get(i) == dividedNumber) {
                 gameResultCount[STRIKE_INDEX]++;
-            } else if (randomNumbers.contains(number)) {
+                continue;
+            }
+            if (randomNumbers.contains(dividedNumber)) {
                 gameResultCount[BALL_INDEX]++;
             }
         }
     }
 
+    public static int returnDividedNumber(String number, int index) {
+        return number.charAt(index) - CHAR_TO_NUMBER;
+    }
+
     public static void main(String[] args) {
         // TODO: 프로그램 구현
         System.out.println("숫자 야구 게임을 시작합니다.");
-        List<Integer> randomNumbers = makeRandomNumber();
-
+        makeRandomNumber();
         System.out.println(randomNumbers);
 
         while (gameResultCount[STRIKE_INDEX] < 3) {
             System.out.print("숫자를 입력해주세요 : ");
-            int number = Integer.parseInt(Console.readLine());
+            String number = Console.readLine();
 
             checkGameResult(randomNumbers, number);
 
