@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="baseball.ApplicationTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-11-23T11:38:58" hostname="yuhuijin-ui-MacBookAir.local" time="1.187">
+<testsuite name="baseball.ApplicationTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-11-23T11:56:09" hostname="yuhuijin-ui-MacBookAir.local" time="1.466">
   <properties/>
-  <testcase name="게임종료_후_재시작()" classname="baseball.ApplicationTest" time="1.187">
+  <testcase name="게임종료_후_재시작()" classname="baseball.ApplicationTest" time="1.466">
     <failure message="java.lang.StringIndexOutOfBoundsException: String index out of range: 1" type="java.lang.StringIndexOutOfBoundsException">java.lang.StringIndexOutOfBoundsException: String index out of range: 1
 	at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:47)
 	at java.base/java.lang.String.charAt(String.java:693)
-	at baseball.Application.returnDividedNumber(Application.java:55)
-	at baseball.Application.checkGameResult(Application.java:43)
-	at baseball.Application.main(Application.java:69)
+	at baseball.Application.returnDividedNumber(Application.java:56)
+	at baseball.Application.checkGameResult(Application.java:45)
+	at baseball.Application.main(Application.java:70)
 	at baseball.ApplicationTest.runMain(ApplicationTest.java:33)
 	at camp.nextstep.edu.missionutils.test.NsTest.run(NsTest.java:35)
 	at baseball.ApplicationTest.lambda$게임종료_후_재시작$0(ApplicationTest.java:16)
