@@ -1,6 +1,6 @@
 package baseball;
 
-public class ValidationException {
+public class ExceptionValidation {
     public int isNumber(String inputNumber) {
         try {
             int changeNumber = Integer.parseInt(inputNumber);

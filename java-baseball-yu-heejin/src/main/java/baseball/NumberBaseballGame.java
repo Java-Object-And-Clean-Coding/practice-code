@@ -7,14 +7,16 @@ import java.util.Arrays;
 import java.util.List;
 
 public class NumberBaseballGame {
-    private static final int NUMBER_SIZE = 3;
-    private static final int MIN_NUMBER = 1;
-    private static final int MAX_NUMBER = 9;
-    private static final int INIT_GAME_RESULT = 0;
-    private static final int STRIKE_INDEX = 0;
-    private static final int BALL_INDEX = 1;
-    private static final char CHAR_TO_NUMBER = '0';
-    private static List<Integer> randomNumbers;
+    private final int NUMBER_SIZE = 3;
+    private final int MIN_NUMBER = 1;
+    private final int MAX_NUMBER = 9;
+    private final int INIT_GAME_RESULT = 0;
+    private final int STRIKE_INDEX = 0;
+    private final int BALL_INDEX = 1;
+    private final int NOTHING_INDEX = 2;
+    private final char CHAR_TO_NUMBER = '0';
+    private final String[] GAME_RESULT_MESSAGE = {"스트라이크", "볼", "낫싱"};
+    private List<Integer> randomNumbers;
     private List<Integer> gameResultCount;
 
     public NumberBaseballGame() {
@@ -30,45 +32,52 @@ public class NumberBaseballGame {
         }
     }
 
-    public static void insertRandomNumber(int randomNumber) {
+    private void insertRandomNumber(int randomNumber) {
         if (!randomNumbers.contains(randomNumber)) {
             randomNumbers.add(randomNumber);
         }
     }
 
-    public static String getGameResult() {
-
-        if (gameResultCount[BALL_INDEX] == 0 && gameResultCount[STRIKE_INDEX] > 0) {
-            return gameResultCount[STRIKE_INDEX] + "스트라이크";
+    public String getGameResult() {
+        if (gameResultCount.get(BALL_INDEX) == 0 && gameResultCount.get(STRIKE_INDEX) > 0) {
+            return gameResultCount.get(STRIKE_INDEX) + GAME_RESULT_MESSAGE[STRIKE_INDEX];
         }
-        if (gameResultCount[BALL_INDEX] > 0 && gameResultCount[STRIKE_INDEX] > 0) {
-            return gameResultCount[BALL_INDEX] + "볼 " + gameResultCount[STRIKE_INDEX] + "스트라이크";
+        if (gameResultCount.get(BALL_INDEX) > 0 && gameResultCount.get(STRIKE_INDEX) > 0) {
+            return gameResultCount.get(BALL_INDEX) + GAME_RESULT_MESSAGE[BALL_INDEX]
+                    + " " + gameResultCount.get(STRIKE_INDEX) + GAME_RESULT_MESSAGE[STRIKE_INDEX];
         }
-        if (gameResultCount[STRIKE_INDEX] == 0 && gameResultCount[BALL_INDEX] > 0) {
-            return gameResultCount[BALL_INDEX] +"볼";
+        if (gameResultCount.get(STRIKE_INDEX) == 0 && gameResultCount.get(BALL_INDEX) > 0) {
+            return gameResultCount.get(BALL_INDEX) + GAME_RESULT_MESSAGE[BALL_INDEX];
         }
-        return "낫싱";
+        return GAME_RESULT_MESSAGE[NOTHING_INDEX];
     }
 
-    public static void checkGameResult(List<Integer> randomNumbers, String number) {
+    public void checkGameResult(String number) {
         for (int i = 0; i < NUMBER_SIZE; i++) {
             int dividedNumber = returnDividedNumber(number, i);
             countGameResult(i, dividedNumber);
         }
     }
 
-    public static void countGameResult(int index, int dividedNumber) {
+    private int returnDividedNumber(String number, int index) {
+        return number.charAt(index) - CHAR_TO_NUMBER;
+    }
+
+    public void countGameResult(int index, int dividedNumber) {
         if (randomNumbers.get(index) == dividedNumber) {
-            gameResultCount[STRIKE_INDEX]++;
+            int countTempForIncrease = gameResultCount.get(STRIKE_INDEX) + 1;
+            gameResultCount.set(STRIKE_INDEX, countTempForIncrease);
             return;
         }
-
         if (randomNumbers.contains(dividedNumber)) {
-            gameResultCount[BALL_INDEX]++;
+            int countTempForIncrease = gameResultCount.get(BALL_INDEX) + 1;
+            gameResultCount.set(BALL_INDEX, countTempForIncrease);
         }
     }
 
-    public static int returnDividedNumber(String number, int index) {
-        return number.charAt(index) - CHAR_TO_NUMBER;
+    public void clearRandomNumberByG\ameContinueAnswer(String gameContinueAnswer) {
+        if (gameContinueAnswer.equals("1")) {
+            randomNumbers.clear();
+        }
     }
 }
