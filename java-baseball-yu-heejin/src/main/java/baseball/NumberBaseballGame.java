@@ -63,7 +63,7 @@ public class NumberBaseballGame {
         return number.charAt(index) - CHAR_TO_NUMBER;
     }
 
-    public void countGameResult(int index, int dividedNumber) {
+    private void countGameResult(int index, int dividedNumber) {
         if (randomNumbers.get(index) == dividedNumber) {
             int countTempForIncrease = gameResultCount.get(STRIKE_INDEX) + 1;
             gameResultCount.set(STRIKE_INDEX, countTempForIncrease);
@@ -75,7 +75,7 @@ public class NumberBaseballGame {
         }
     }
 
-    public void clearRandomNumberByG\ameContinueAnswer(String gameContinueAnswer) {
+    public void clearRandomNumberByGameContinueAnswer(String gameContinueAnswer) {
         if (gameContinueAnswer.equals("1")) {
             randomNumbers.clear();
         }

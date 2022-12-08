@@ -24,11 +24,15 @@ public class Application {
             }
 
             numberBaseballGame.checkGameResult(number);
+
+            String resultMessage = numberBaseballGame.getGameResult();
+
+            outputView.printGameResult(resultMessage);
+
+            if (resultMessage.equals("3스트라이크")) {
+                outputView.printSuccessGameMessage();
+
+            }
         }
-
-
-
-
-
     }
 }

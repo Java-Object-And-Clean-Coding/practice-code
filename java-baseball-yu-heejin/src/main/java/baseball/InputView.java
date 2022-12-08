@@ -12,11 +12,12 @@ public class InputView {
     }
 
     public String inputNumber() {
+        OUTPUT_VIEW.printGameStartMessage();
         try {
-            OUTPUT_VIEW.printGameStartMessage();
             String number = Console.readLine();
 
             EXCEPTION_VALIDATION.isNumber(number);
+            EXCEPTION_VALIDATION.isMaxSizeNumber(number);
 
             return number;
         } catch (IllegalArgumentException exception) {
@@ -26,14 +27,12 @@ public class InputView {
         return null;
     }
 
-    public static void inputGameContinueAnswer() {
-        if (gameResultCount[STRIKE_INDEX] == 3) {
-            printSuccessGameMessage();
+    public String inputGameContinueNumber() {
+        OUTPUT_VIEW.printInputGameContinueAnswerMessage();
+        try {
 
-            printInputGameContinueAnswerMessage();
-            gameContinueAnswer = Console.readLine();
+        } catch (IllegalArgumentException exception) {
 
-            clearRandomNumberByGameContinueAnswer();
         }
     }
 }

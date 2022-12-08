@@ -6,8 +6,8 @@ public class OutputView {
     public OutputView() {
         this.NUMBER_BASEBALL_GAME = new NumberBaseballGame();
     }
-    public void printGameResult() {
-        System.out.println(NUMBER_BASEBALL_GAME.getGameResult());
+    public void printGameResult(String message) {
+        System.out.println(message);
     }
 
     public void printSuccessGameMessage() {
