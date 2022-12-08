@@ -1,4 +1,6 @@
-package baseball;
+package baseball.view;
+
+import baseball.NumberBaseballGame;
 
 public class OutputView {
     private final NumberBaseballGame NUMBER_BASEBALL_GAME;

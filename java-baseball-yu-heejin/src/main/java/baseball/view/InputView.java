@@ -1,5 +1,6 @@
-package baseball;
+package baseball.view;
 
+import baseball.exception.ExceptionValidation;
 import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
@@ -12,7 +13,6 @@ public class InputView {
     }
 
     public String inputNumber() {
-        OUTPUT_VIEW.printGameStartMessage();
         try {
             String number = Console.readLine();
 
@@ -23,16 +23,19 @@ public class InputView {
         } catch (IllegalArgumentException exception) {
             System.out.println("[ERROR] 올바른 입력 값이 아닙니다.");
         }
-
         return null;
     }
 
     public String inputGameContinueNumber() {
         OUTPUT_VIEW.printInputGameContinueAnswerMessage();
         try {
+            String number = Console.readLine();
+            EXCEPTION_VALIDATION.isOneOrTwo(number);
 
+            return number;
         } catch (IllegalArgumentException exception) {
-
+            System.out.println("[ERROR] 1또는 2만 입력해주세요.");
         }
+        return null;
     }
 }

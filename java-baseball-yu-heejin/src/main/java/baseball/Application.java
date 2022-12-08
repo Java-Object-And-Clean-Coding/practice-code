@@ -1,6 +1,7 @@
 package baseball;
 
-import camp.nextstep.edu.missionutils.Console;
+import baseball.view.InputView;
+import baseball.view.OutputView;
 
 public class Application {
     private static NumberBaseballGame numberBaseballGame;
@@ -14,25 +15,6 @@ public class Application {
     }
 
     public static void main(String[] args) {
-        init();
 
-        while (true) {
-            String number = inputView.inputNumber();
-            if (number == null) {
-                return;
-                // TODO: 게임을 종료시키는 방법은 무엇일까?
-            }
-
-            numberBaseballGame.checkGameResult(number);
-
-            String resultMessage = numberBaseballGame.getGameResult();
-
-            outputView.printGameResult(resultMessage);
-
-            if (resultMessage.equals("3스트라이크")) {
-                outputView.printSuccessGameMessage();
-
-            }
-        }
     }
 }

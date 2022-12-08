@@ -1,4 +1,4 @@
-package baseball;
+package baseball.exception;
 
 public class ExceptionValidation {
     private final int MAX_SIZE = 3;
@@ -20,6 +20,8 @@ public class ExceptionValidation {
     }
 
     public void isOneOrTwo(String number) {
-        if (!number.equals("1"))
+        if (!number.equals("1") || !number.equals("2")) {
+            throw new IllegalArgumentException();
+        }
     }
 }
