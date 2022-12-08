@@ -2,6 +2,8 @@ package baseball.exception;
 
 public class ExceptionValidation {
     private final int MAX_SIZE = 3;
+    private final String CONTINUE_ANSWER = "1";
+    private final String NOT_CONTINUE_ANSWER = "2";
 
     // TODO: 생성자 사용해보기
 
@@ -20,7 +22,7 @@ public class ExceptionValidation {
     }
 
     public void isOneOrTwo(String number) {
-        if (!number.equals("1") || !number.equals("2")) {
+        if (!number.equals(CONTINUE_ANSWER) || !number.equals(NOT_CONTINUE_ANSWER)) {
             throw new IllegalArgumentException();
         }
     }
