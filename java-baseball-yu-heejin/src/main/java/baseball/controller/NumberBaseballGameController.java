@@ -1,18 +1,15 @@
 package baseball.controller;
 
 import baseball.NumberBaseballGame;
-import baseball.view.InputView;
-import baseball.view.OutputView;
+import baseball.model.domain.RandomNumbers;
 
 public class NumberBaseballGameController {
-    private final OutputView OUTPUT_VIEW;
-    private final InputView INPUT_VIEW;
     private final NumberBaseballGame NUMBER_BASEBALL_GAME;
+    private RandomNumbers randomNumbers;
 
     public NumberBaseballGameController() {
-        this.OUTPUT_VIEW = new OutputView();
-        this.INPUT_VIEW = new InputView();
         this.NUMBER_BASEBALL_GAME = new NumberBaseballGame();
+        this.randomNumbers = new RandomNumbers();
     }
 
     public void gameStart() {
@@ -23,6 +20,6 @@ public class NumberBaseballGameController {
     }
 
     private void play(String number) {
-        NUMBER_BASEBALL_GAME
+
     }
 }
