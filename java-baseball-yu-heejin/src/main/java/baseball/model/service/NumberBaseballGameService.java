@@ -14,4 +14,8 @@ public class NumberBaseballGameService {
     public List<Integer> getRandomNumbers() {
         return NUMBER_BASEBALL_GAME.getRandomNumbers();
     }
+
+    public List<Integer> getGameResult(List<Integer> randomNumbers, String number) {
+        return NUMBER_BASEBALL_GAME.checkGameResult(number);
+    }
 }
