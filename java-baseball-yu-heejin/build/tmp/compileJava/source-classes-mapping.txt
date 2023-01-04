@@ -1,10 +1,18 @@
-baseball/ExceptionValidation.java
- baseball.ExceptionValidation
-baseball/OutputView.java
- baseball.OutputView
-baseball/NumberBaseballGame.java
- baseball.NumberBaseballGame
+baseball/controller/NumberBaseballGameController.java
+ baseball.controller.NumberBaseballGameController
+baseball/exception/ExceptionValidation.java
+ baseball.exception.ExceptionValidation
+baseball/model/domain/NumberBaseballGame.java
+ baseball.model.domain.NumberBaseballGame
+baseball/model/domain/RandomNumbers.java
+ baseball.model.domain.RandomNumbers
+baseball/model/domain/ResultMessage.java
+ baseball.model.domain.ResultMessage
+baseball/model/domain/ViewMessage.java
+ baseball.model.domain.ViewMessage
+baseball/view/InputUI.java
+ baseball.view.InputUI
+baseball/view/OutputView.java
+ baseball.view.OutputView
 baseball/Application.java
  baseball.Application
-baseball/InputView.java
- baseball.InputView

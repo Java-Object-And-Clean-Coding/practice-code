@@ -11,4 +11,8 @@ public enum ViewMessage {
     ViewMessage(String viewMessage) {
         this.viewMessage = viewMessage;
     }
+
+    public String getViewMessage() {
+        return viewMessage;
+    }
 }

@@ -10,4 +10,8 @@ public enum ResultMessage {
     ResultMessage(String resultMessage) {
         this.resultMessage = resultMessage;
     }
+
+    public String getResultMessage() {
+        return resultMessage;
+    }
 }
