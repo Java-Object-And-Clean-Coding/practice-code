@@ -10,11 +10,11 @@ baseball/model/domain/ResultMessage.java
  baseball.model.domain.ResultMessage
 baseball/model/domain/ViewMessage.java
  baseball.model.domain.ViewMessage
-baseball/controller/NumberBaseballGameController.java
- baseball.controller.NumberBaseballGameController
-baseball/model/service/NumberBaseballGameService.java
- baseball.model.service.NumberBaseballGameService
-baseball/Application.java
- baseball.Application
 baseball/model/domain/NumberBaseballGame.java
  baseball.model.domain.NumberBaseballGame
+baseball/model/service/NumberBaseballGameService.java
+ baseball.model.service.NumberBaseballGameService
+baseball/controller/NumberBaseballGameController.java
+ baseball.controller.NumberBaseballGameController
+baseball/Application.java
+ baseball.Application

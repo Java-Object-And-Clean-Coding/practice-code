@@ -35,13 +35,19 @@ public class NumberBaseballGame {
         return this.randomNumbers;
     }
 
-    public void checkGameResult(String number) {
+    public List<Integer> checkGameResult(String number) {
         for (int numberIndex = 0; numberIndex < randomNumbers.size(); numberIndex++) {
             int numberByCharAt = Integer.parseInt(String.valueOf(number.charAt(numberIndex)));
 
             if (randomNumbers.get(numberIndex) == numberByCharAt) {
-
+               int result = gameResult.get(0) + 1;   // 스트라이크
+               gameResult.set(0, result);
+            } else if (randomNumbers.contains(numberByCharAt)) {
+                int result = gameResult.get(1) + 1;   // 볼
+                gameResult.set(1, result);
             }
         }
+
+        return gameResult;
     }
 }
