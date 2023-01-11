@@ -36,4 +36,12 @@ public class OutputView {
 
         return ResultMessage.NOTHING.getResultMessage();
     }
+
+    public void printGameSuccessMessage() {
+        System.out.println(ViewMessage.SUCCESS.getViewMessage());
+    }
+
+    public void printIsContinueMessage() {
+        System.out.println(ViewMessage.QUESTION_CONTINUE.getViewMessage());
+    }
 }

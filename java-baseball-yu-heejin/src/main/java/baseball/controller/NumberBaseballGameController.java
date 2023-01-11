@@ -5,10 +5,14 @@ import baseball.model.service.NumberBaseballGameService;
 import java.util.List;
 
 public class NumberBaseballGameController {
-    private final NumberBaseballGameService BASEBALL_GAME_SERVICE = new NumberBaseballGameService();
+    private NumberBaseballGameService baseballGameService;
+
+    public NumberBaseballGameController() {
+        baseballGameService = new NumberBaseballGameService();
+    }
 
     public List<Integer> startGame(String number) {
-        List<Integer> gameResults = BASEBALL_GAME_SERVICE.getGameResult(number);
+        List<Integer> gameResults = baseballGameService.getGameResult(number);
         return gameResults;
     }
 }

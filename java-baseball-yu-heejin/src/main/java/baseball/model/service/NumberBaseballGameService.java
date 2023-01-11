@@ -5,17 +5,17 @@ import baseball.model.domain.NumberBaseballGame;
 import java.util.List;
 
 public class NumberBaseballGameService {
-    private NumberBaseballGame NUMBER_BASEBALL_GAME;
+    private NumberBaseballGame numberBaseballGame;
 
     public NumberBaseballGameService() {
-        NUMBER_BASEBALL_GAME = new NumberBaseballGame();
+        numberBaseballGame = new NumberBaseballGame();
     }
 
     public List<Integer> getRandomNumbers() {
-        return NUMBER_BASEBALL_GAME.getRandomNumbers();
+        return numberBaseballGame.getRandomNumbers();
     }
 
     public List<Integer> getGameResult(String number) {
-        return NUMBER_BASEBALL_GAME.getGameResult(number);
+        return numberBaseballGame.getGameResult(number);
     }
 }

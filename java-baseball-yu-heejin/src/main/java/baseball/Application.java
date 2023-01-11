@@ -13,11 +13,27 @@ public class Application {
 
     public static void main(String[] args) {
         OUTPUT_VIEW.printGameStartMessage();
+        String isContinueAnswer = "-1";
+
         OUTPUT_VIEW.printInputNumberMessage();
         String number = INPUT_UI.inputUserNumber();
 
         List<Integer> gameResults = NUMBER_BASEBALL_GAME_CONTROLLER.startGame(number);
 
         OUTPUT_VIEW.printGameResult(gameResults);
+
+        if (gameResults.get(0) == 3) {
+            OUTPUT_VIEW.printGameSuccessMessage();
+            OUTPUT_VIEW.printIsContinueMessage();
+            isContinueAnswer = INPUT_UI.inputIsContinue();
+        }
+
+        if (isContinueAnswer.equals("1")) {
+            gameResults = NUMBER_BASEBALL_GAME_CONTROLLER.startGame(number);
+        }
+
+
+
+
     }
 }
