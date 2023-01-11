@@ -46,23 +46,20 @@ public class NumberBaseballGame {
     public List<Integer> getGameResult(String number) {
         for (int numberIndex = 0; numberIndex < randomNumbers.size(); numberIndex++) {
             int numberByCharAt = Integer.parseInt(String.valueOf(number.charAt(numberIndex)));
-            checkAndInitGameResult(numberIndex, numberByCharAt);
+            initGameResult(numberIndex, numberByCharAt);
         }
 
         return gameResult;
     }
 
-    private void checkAndInitGameResult(int numberIndex, int numberByCharAt) {
-        System.out.println(numberByCharAt);
+    private void initGameResult(int numberIndex, int numberByCharAt) {
         if (randomNumbers.get(numberIndex) == numberByCharAt) {
-            System.out.println("스트라이크 시작");
             int result = gameResult.get(STRIKE_INDEX) + 1;
             gameResult.set(STRIKE_INDEX, result);
             return;
         }
 
         if (randomNumbers.contains(numberByCharAt)) {
-            System.out.println("볼 시작");
             int result = gameResult.get(BALL_INDEX) + 1;
             gameResult.set(BALL_INDEX, result);
         }

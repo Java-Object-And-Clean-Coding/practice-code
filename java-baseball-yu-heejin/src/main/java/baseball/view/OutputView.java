@@ -18,21 +18,22 @@ public class OutputView {
     }
 
     public void printGameResult(List<Integer> gameResult) {
+        System.out.println(getGameResultMessage(gameResult));
+    }
+
+    private String getGameResultMessage(List<Integer> gameResult) {
         if (gameResult.get(STRIKE_INDEX) == 0 && gameResult.get(BALL_INDEX) > 0) {
-            System.out.println(gameResult.get(BALL_INDEX) + ResultMessage.BALL.getResultMessage());
-            return;
+            return gameResult.get(BALL_INDEX) + ResultMessage.BALL.getResultMessage();
         }
 
         if (gameResult.get(BALL_INDEX) == 0 && gameResult.get(STRIKE_INDEX) > 0) {
-            System.out.println(gameResult.get(STRIKE_INDEX) + ResultMessage.STRIKE.getResultMessage());
-            return;
+            return gameResult.get(STRIKE_INDEX) + ResultMessage.STRIKE.getResultMessage();
         }
 
         if (gameResult.get(BALL_INDEX) > 0 && gameResult.get(STRIKE_INDEX) > 0) {
-            System.out.println(gameResult.get(BALL_INDEX) + ResultMessage.BALL.getResultMessage() + gameResult.get(STRIKE_INDEX) + ResultMessage.STRIKE.getResultMessage());
-            return;
+            return gameResult.get(BALL_INDEX) + ResultMessage.BALL.getResultMessage() + gameResult.get(STRIKE_INDEX) + ResultMessage.STRIKE.getResultMessage();
         }
 
-        System.out.println(ResultMessage.NOTHING.getResultMessage());
+        return ResultMessage.NOTHING.getResultMessage();
     }
 }
