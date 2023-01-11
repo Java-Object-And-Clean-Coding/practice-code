@@ -9,9 +9,6 @@ public class NumberBaseballGameController {
 
     public List<Integer> startGame(String number) {
         List<Integer> gameResults = BASEBALL_GAME_SERVICE.getGameResult(number);
-
-        System.out.println(BASEBALL_GAME_SERVICE.getRandomNumbers());
-        System.out.println(BASEBALL_GAME_SERVICE.getGameResult(number));
         return gameResults;
     }
 }

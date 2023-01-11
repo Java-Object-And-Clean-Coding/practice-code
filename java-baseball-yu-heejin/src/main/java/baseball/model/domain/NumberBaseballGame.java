@@ -53,13 +53,16 @@ public class NumberBaseballGame {
     }
 
     private void checkAndInitGameResult(int numberIndex, int numberByCharAt) {
+        System.out.println(numberByCharAt);
         if (randomNumbers.get(numberIndex) == numberByCharAt) {
+            System.out.println("스트라이크 시작");
             int result = gameResult.get(STRIKE_INDEX) + 1;
             gameResult.set(STRIKE_INDEX, result);
             return;
         }
 
         if (randomNumbers.contains(numberByCharAt)) {
+            System.out.println("볼 시작");
             int result = gameResult.get(BALL_INDEX) + 1;
             gameResult.set(BALL_INDEX, result);
         }
