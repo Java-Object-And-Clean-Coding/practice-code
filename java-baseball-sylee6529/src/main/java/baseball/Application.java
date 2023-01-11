@@ -71,7 +71,7 @@ public class Application {
             if(numberIndex == i) {
                 strikeCount++;
             }
-            else if(numberIndex > 0){
+            else if(numberIndex >= 0){
                 ballCount++;
             }
         }
@@ -91,7 +91,6 @@ public class Application {
 
         System.out.println("");
         if(strikeCount == NUMBER_SIZE) {
-
             return true;
         }
         return false;
