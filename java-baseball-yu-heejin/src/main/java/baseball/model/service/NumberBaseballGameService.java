@@ -15,7 +15,7 @@ public class NumberBaseballGameService {
         return NUMBER_BASEBALL_GAME.getRandomNumbers();
     }
 
-    public List<Integer> getGameResult(List<Integer> randomNumbers, String number) {
+    public List<Integer> getGameResult(String number) {
         return NUMBER_BASEBALL_GAME.getGameResult(number);
     }
 }

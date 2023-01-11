@@ -6,12 +6,12 @@ import java.util.List;
 
 public class NumberBaseballGameController {
     private final NumberBaseballGameService BASEBALL_GAME_SERVICE = new NumberBaseballGameService();
-    public void startGame(String number) {
-        List<Integer> randomNumbers = BASEBALL_GAME_SERVICE.getRandomNumbers();
 
-        System.out.println(randomNumbers);
+    public List<Integer> startGame(String number) {
+        List<Integer> gameResults = BASEBALL_GAME_SERVICE.getGameResult(number);
 
-        System.out.println(BASEBALL_GAME_SERVICE.getGameResult(randomNumbers, number));
-
+        System.out.println(BASEBALL_GAME_SERVICE.getRandomNumbers());
+        System.out.println(BASEBALL_GAME_SERVICE.getGameResult(number));
+        return gameResults;
     }
 }
