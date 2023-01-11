@@ -19,6 +19,7 @@ public class Application {
 
         while(IS_GAME_RESTARTED) {
             randomNumberList = new ArrayList<>(Randoms.pickUniqueNumbersInRange(1, 9, NUMBER_SIZE));
+            System.out.println("--숫자 공개 test : " + randomNumberList);
             System.out.println("숫자 야구 게임을 시작합니다.");
 
             System.out.print("숫자를 입력해주세요 : ");
@@ -52,23 +53,25 @@ public class Application {
     // TODO : Output Model Class 분리 및 멤버 변수 및 메소드로 추가
     static void printGameResult(ArrayList<Integer> randomNumberList, String input) {
         ArrayList<String> numberList = convertStringNumberToArrayListOfNumber(input);
-        int ballCount = getBallCount(randomNumberList, numberList);
-        int strikeCount = getStrikeCount(randomNumberList, numberList);
+        int ballCount = 0;
+        int strikeCount = 0;
+
+        for(int i = 0; i < numberList.size(); i++) {
+            int numberIndex = input.indexOf(String.valueOf(randomNumberList.get(i)));
+            if(numberIndex == i) {
+                strikeCount++;
+            }
+            else if(numberIndex > 0){
+                ballCount++;
+            }
+        }
 
         if(ballCount == 0 && strikeCount == 0) {
             System.out.println("낫싱");
         }
         else {
-            System.out.println(ballCount + "카운트 " + strikeCount + "스트라이크");
+            System.out.println(ballCount + "볼 " + strikeCount + "스트라이크");
         }
-    }
-
-    static int getBallCount(ArrayList<Integer> randomNumberList, ArrayList<String> numberList) {
-        return -1;
-    }
-
-    static int getStrikeCount(ArrayList<Integer> randomNumberList, ArrayList<String> numberList) {
-        return -1;
     }
 
     // TODO : 더 작은 단위로 메소드 분리
