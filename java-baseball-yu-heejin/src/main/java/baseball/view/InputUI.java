@@ -8,4 +8,10 @@ public class InputUI {
 
         return number;
     }
+
+    public String inputIsContinue() {
+        String number = Console.readLine();
+
+        return number;
+    }
 }
