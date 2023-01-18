@@ -1,21 +1,17 @@
 package baseball.model.service;
 
 import baseball.model.domain.NumberBaseballGame;
+import baseball.model.repository.NumberBaseballGameRepository;
 
-import java.util.List;
-
+/* 비즈니스 로직을 처리하는 Service */
 public class NumberBaseballGameService {
-    private NumberBaseballGame numberBaseballGame;
+    private NumberBaseballGameRepository numberBaseballGameRepository;
 
     public NumberBaseballGameService() {
-        numberBaseballGame = new NumberBaseballGame();
+        numberBaseballGameRepository = new NumberBaseballGameRepository();
     }
 
-    public List<Integer> getRandomNumbers() {
-        return numberBaseballGame.getRandomNumbers();
-    }
-
-    public List<Integer> getGameResult(String number) {
-        return numberBaseballGame.getGameResult(number);
+    public NumberBaseballGame getNumberBaseballGame() {
+        return numberBaseballGameRepository.getNumberBaseballGame();
     }
 }

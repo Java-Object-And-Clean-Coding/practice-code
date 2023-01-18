@@ -4,36 +4,20 @@ import baseball.controller.NumberBaseballGameController;
 import baseball.view.InputUI;
 import baseball.view.OutputView;
 
-import java.util.List;
-
 public class Application {
-    private static final OutputView OUTPUT_VIEW = new OutputView();
-    private static final InputUI INPUT_UI = new InputUI();
-    private static final NumberBaseballGameController NUMBER_BASEBALL_GAME_CONTROLLER = new NumberBaseballGameController();
+    private static OutputView outputView;
+    private static InputUI inputUI;
+    private static NumberBaseballGameController numberBaseballGameController;
 
     public static void main(String[] args) {
-        OUTPUT_VIEW.printGameStartMessage();
-        String isContinueAnswer = "-1";
+        outputView = new OutputView();
+        inputUI = new InputUI();
+        numberBaseballGameController = new NumberBaseballGameController();
 
-        OUTPUT_VIEW.printInputNumberMessage();
-        String number = INPUT_UI.inputUserNumber();
+        outputView.printGameStartMessage();
+        outputView.printInputNumberMessage();
+        String number = inputUI.inputUserNumber();
 
-        List<Integer> gameResults = NUMBER_BASEBALL_GAME_CONTROLLER.startGame(number);
-
-        OUTPUT_VIEW.printGameResult(gameResults);
-
-        if (gameResults.get(0) == 3) {
-            OUTPUT_VIEW.printGameSuccessMessage();
-            OUTPUT_VIEW.printIsContinueMessage();
-            isContinueAnswer = INPUT_UI.inputIsContinue();
-        }
-
-        if (isContinueAnswer.equals("1")) {
-            gameResults = NUMBER_BASEBALL_GAME_CONTROLLER.startGame(number);
-        }
-
-
-
-
+        numberBaseballGameController.startGame(number);
     }
 }
