@@ -20,8 +20,7 @@ public class NumberBaseballGame {
         this.gameResult = Arrays.asList(INIT_RESULT_VALUE, INIT_RESULT_VALUE);
     }
 
-    public NumberBaseballGame(List<Integer> randomNumbers, List<Integer> gameResult) {
-        this.randomNumbers = randomNumbers;
+    public void setGameResult(List<Integer> gameResult) {
         this.gameResult = gameResult;
     }
 

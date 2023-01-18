@@ -1,6 +1,5 @@
 package baseball.controller;
 
-import baseball.model.domain.NumberBaseballGame;
 import baseball.model.service.NumberBaseballGameService;
 
 import java.util.List;
@@ -13,8 +12,10 @@ public class NumberBaseballGameController {
     }
 
     public void startGame(String number) {
-        NumberBaseballGame numberBaseballGame = baseballGameService.getNumberBaseballGame();
+        List<Integer> randomNumbers = baseballGameService.getRandomNumbers();
+        List<Integer> gameResult = baseballGameService.createGameResult(randomNumbers, number);
 
-        System.out.println(numberBaseballGame.getRandomNumbers());
+        System.out.println(randomNumbers);
+        System.out.println(gameResult);
     }
 }

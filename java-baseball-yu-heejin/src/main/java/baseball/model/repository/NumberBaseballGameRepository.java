@@ -2,18 +2,24 @@ package baseball.model.repository;
 
 import baseball.model.domain.NumberBaseballGame;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class NumberBaseballGameRepository {
-    private final int INIT_RESULT_VALUE = 0;
     private NumberBaseballGame numberBaseballGame;
 
     public NumberBaseballGameRepository() {
         this.numberBaseballGame = new NumberBaseballGame();
     }
 
-    public NumberBaseballGame getNumberBaseballGame() {
-        return numberBaseballGame;
+    public List<Integer> getRandomNumbers() {
+        return numberBaseballGame.getRandomNumbers();
+    }
+
+    public List<Integer> getGameResult() {
+        return numberBaseballGame.getGameResult();
+    }
+
+    public void setGameResult(List<Integer> gameResult) {
+        numberBaseballGame.setGameResult(gameResult);
     }
 }
