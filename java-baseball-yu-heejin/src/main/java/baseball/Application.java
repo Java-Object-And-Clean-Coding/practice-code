@@ -4,6 +4,8 @@ import baseball.controller.NumberBaseballGameController;
 import baseball.view.InputUI;
 import baseball.view.OutputView;
 
+import java.util.List;
+
 public class Application {
     private static OutputView outputView;
     private static InputUI inputUI;
@@ -18,6 +20,8 @@ public class Application {
         outputView.printInputNumberMessage();
         String number = inputUI.inputUserNumber();
 
-        numberBaseballGameController.startGame(number);
+        List<Integer> gameResult = numberBaseballGameController.startGame(number);
+
+        outputView.printGameResult(gameResult);
     }
 }
