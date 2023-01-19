@@ -12,7 +12,12 @@ public class NumberBaseballGameController {
     }
 
     public List<Integer> startGame(String number) {
-        List<Integer> gameResults = baseballGameService.getGameResult(number);
-        return gameResults;
+        List<Integer> randomNumbers = baseballGameService.getRandomNumbers();
+        List<Integer> gameResult = baseballGameService.createGameResult(randomNumbers, number);
+
+        System.out.println(randomNumbers);
+        System.out.println(gameResult);
+
+        return gameResult;
     }
 }
