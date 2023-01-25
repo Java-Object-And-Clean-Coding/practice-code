@@ -11,16 +11,14 @@ public class NumberBaseballGameController {
         baseballGameService = new NumberBaseballGameService();
     }
 
-    public void startGame(String number) {
+    public List<Integer> startGame(String number) {
         List<Integer> randomNumbers = baseballGameService.findRandomNumbers();
-        System.out.println(randomNumbers);
-
-        doGame(randomNumbers, number);
+        return doGame(randomNumbers, number);
     }
 
-    private void doGame(List<Integer> randomNumbers, String number) {
+    private List<Integer> doGame(List<Integer> randomNumbers, String number) {
         List<Integer> gameResult = baseballGameService.findGameResult(randomNumbers, number);
-        System.out.println(gameResult);
+        return gameResult;
     }
 
     private void endGame(String number) {

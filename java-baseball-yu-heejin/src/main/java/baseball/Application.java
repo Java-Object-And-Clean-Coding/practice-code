@@ -21,6 +21,6 @@ public class Application {
         outputView.printInputNumberMessage();
         String number = inputUI.inputUserNumber();
 
-        numberBaseballGameController.startGame(number);
+        List<Integer> gameResult = numberBaseballGameController.startGame(number);
     }
 }
