@@ -13,8 +13,8 @@ import java.util.Set;
 public class BaseballService {
     private static final int MAX_NUMBER_SIZE = 3;
 
-    private OutputView outputView;
-    private BaseballGame baseballGame;
+    private OutputView outputView = new OutputView();
+    private BaseballGame baseballGame = new BaseballGame();
     public void playBaseBallGame(ArrayList<Integer> randomNumberList) {
         while(!baseballGame.getIsFinish()) {
             outputView.printInputValueMessage();

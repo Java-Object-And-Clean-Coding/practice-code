@@ -12,8 +12,8 @@ public class BaseballController {
     private static final String RESTART_CODE = "1";
     private static final String QUIT_CODE = "2";
 
-    private OutputView outputView;
-    private BaseballService baseballService;
+    private OutputView outputView = new OutputView();
+    private BaseballService baseballService = new BaseballService();
 
     ArrayList<Integer> randomNumberList;
     boolean isGameRestarted = true;
