@@ -28,20 +28,24 @@ public class NumberBaseballGameService {
 
         for (int numberIndex = 0; numberIndex < randomNumbers.size(); numberIndex++) {
             int numberByCharAt = Integer.parseInt(String.valueOf(number.charAt(numberIndex)));
-
-            if (randomNumbers.get(numberIndex) == numberByCharAt) {
-                int result = gameResult.get(STRIKE_INDEX) + 1;
-                gameResult.set(STRIKE_INDEX, result);
-            } else if (randomNumbers.contains(numberByCharAt)) {
-                int result = gameResult.get(BALL_INDEX) + 1;
-                gameResult.set(BALL_INDEX, result);
-            }
+            gameResult = addGameResultValue(randomNumbers, gameResult, numberIndex, numberByCharAt);
         }
 
         return gameResult;
     }
 
-    private void addGameResultValue() {
+    private List<Integer> addGameResultValue(List<Integer> randomNumbers, List<Integer> gameResult, int numberIndex, int numberByCharAt) {
+        if (randomNumbers.get(numberIndex) == numberByCharAt) {
+            int result = gameResult.get(STRIKE_INDEX) + 1;
+            gameResult.set(STRIKE_INDEX, result);
+            return gameResult;
+        }
 
+        if (randomNumbers.contains(numberByCharAt)) {
+            int result = gameResult.get(BALL_INDEX) + 1;
+            gameResult.set(BALL_INDEX, result);
+        }
+
+        return gameResult;
     }
 }
