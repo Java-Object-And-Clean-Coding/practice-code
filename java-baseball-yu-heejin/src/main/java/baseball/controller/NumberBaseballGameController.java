@@ -11,13 +11,7 @@ public class NumberBaseballGameController {
         baseballGameService = new NumberBaseballGameService();
     }
 
-    public List<Integer> startGame(String number) {
-        List<Integer> randomNumbers = baseballGameService.getRandomNumbers();
-        List<Integer> gameResult = baseballGameService.createGameResult(randomNumbers, number);
+    public void startGame(String number) {
 
-        System.out.println(randomNumbers);
-        System.out.println(gameResult);
-
-        return gameResult;
     }
 }
