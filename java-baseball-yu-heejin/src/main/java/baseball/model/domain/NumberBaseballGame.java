@@ -32,4 +32,8 @@ public class NumberBaseballGame {
         this.gameResult = Arrays.asList(INIT_RESULT_VALUE, INIT_RESULT_VALUE);
         return gameResult;
     }
+
+    public void updateGameResult(List<Integer> gameResult) {
+        this.gameResult = gameResult;
+    }
 }

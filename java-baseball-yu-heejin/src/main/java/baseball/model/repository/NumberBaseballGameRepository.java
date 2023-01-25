@@ -18,4 +18,8 @@ public class NumberBaseballGameRepository {
     public List<Integer> findGameResult() {
         return numberBaseballGame.getGameResult();
     }
+
+    public void updateGameResult(List<Integer> gameResult) {
+        numberBaseballGame.updateGameResult(gameResult);
+    }
 }

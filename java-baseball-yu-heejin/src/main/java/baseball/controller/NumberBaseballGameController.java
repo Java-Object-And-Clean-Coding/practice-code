@@ -20,7 +20,6 @@ public class NumberBaseballGameController {
 
     private void doGame(List<Integer> randomNumbers, String number) {
         List<Integer> gameResult = baseballGameService.findGameResult(randomNumbers, number);
-
         System.out.println(gameResult);
     }
 
