@@ -23,4 +23,13 @@ public class NumberBaseballGame {
     public List<Integer> getRandomNumbers() {
         return randomNumbers;
     }
+
+    public List<Integer> getGameResult() {
+        return gameResult;
+    }
+
+    public List<Integer> clearRandomNumbers() {
+        this.gameResult = Arrays.asList(INIT_RESULT_VALUE, INIT_RESULT_VALUE);
+        return gameResult;
+    }
 }

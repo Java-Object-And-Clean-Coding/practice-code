@@ -14,4 +14,8 @@ public class NumberBaseballGameRepository {
     public List<Integer> findRandomNumbers() {
         return numberBaseballGame.getRandomNumbers();
     }
+
+    public List<Integer> findGameResult() {
+        return numberBaseballGame.getGameResult();
+    }
 }
