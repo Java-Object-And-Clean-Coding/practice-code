@@ -9,4 +9,12 @@ public class NumberBaseballGameService {
     private final int STRIKE_INDEX = 0;
     private final int BALL_INDEX = 1;
     private NumberBaseballGameRepository numberBaseballGameRepository;
+
+    public NumberBaseballGameService() {
+        numberBaseballGameRepository = new NumberBaseballGameRepository();
+    }
+
+    public List<Integer> findRandomNumbers() {
+        return numberBaseballGameRepository.findRandomNumbers();
+    }
 }

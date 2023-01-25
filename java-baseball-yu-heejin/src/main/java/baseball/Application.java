@@ -12,6 +12,15 @@ public class Application {
     private static NumberBaseballGameController numberBaseballGameController;
 
     public static void main(String[] args) {
+        outputView = new OutputView();
+        inputUI = new InputUI();
+        numberBaseballGameController = new NumberBaseballGameController();
 
+        outputView.printGameStartMessage();
+
+        outputView.printInputNumberMessage();
+        String number = inputUI.inputUserNumber();
+
+        numberBaseballGameController.startGame(number);
     }
 }
