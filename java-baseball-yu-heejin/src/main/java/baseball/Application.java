@@ -11,24 +11,16 @@ public class Application {
     private static InputUI inputUI;
     private static NumberBaseballGameController numberBaseballGameController;
 
-    public Application() {
+    public static void main(String[] args) {
         outputView = new OutputView();
         inputUI = new InputUI();
         numberBaseballGameController = new NumberBaseballGameController();
-    }
 
-    public static void main(String[] args) {
-        String number = inputNumber();
-        System.out.println(number);
+        outputView.printGameStartMessage();
+
+        outputView.printInputNumberMessage();
+        String number = inputUI.inputUserNumber();
 
         List<Integer> gameResult = numberBaseballGameController.startGame(number);
-        outputView.printGameResult(gameResult);
-    }
-
-    public static String inputNumber() {
-        outputView.printGameStartMessage();
-        outputView.printInputNumberMessage();
-
-        return inputUI.inputUserNumber();
     }
 }

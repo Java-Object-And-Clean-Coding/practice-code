@@ -20,15 +20,20 @@ public class NumberBaseballGame {
         this.gameResult = Arrays.asList(INIT_RESULT_VALUE, INIT_RESULT_VALUE);
     }
 
-    public void setGameResult(List<Integer> gameResult) {
-        this.gameResult = gameResult;
-    }
-
     public List<Integer> getRandomNumbers() {
         return randomNumbers;
     }
 
     public List<Integer> getGameResult() {
         return gameResult;
+    }
+
+    public List<Integer> clearRandomNumbers() {
+        this.gameResult = Arrays.asList(INIT_RESULT_VALUE, INIT_RESULT_VALUE);
+        return gameResult;
+    }
+
+    public void updateGameResult(List<Integer> gameResult) {
+        this.gameResult = gameResult;
     }
 }

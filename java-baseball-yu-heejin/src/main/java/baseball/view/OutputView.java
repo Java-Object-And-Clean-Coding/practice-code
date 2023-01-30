@@ -31,7 +31,7 @@ public class OutputView {
         }
 
         if (gameResult.get(BALL_INDEX) > 0 && gameResult.get(STRIKE_INDEX) > 0) {
-            return gameResult.get(BALL_INDEX) + ResultMessage.BALL.getResultMessage() + gameResult.get(STRIKE_INDEX) + ResultMessage.STRIKE.getResultMessage();
+            return gameResult.get(BALL_INDEX) + ResultMessage.BALL.getResultMessage() + " " + gameResult.get(STRIKE_INDEX) + ResultMessage.STRIKE.getResultMessage();
         }
 
         return ResultMessage.NOTHING.getResultMessage();

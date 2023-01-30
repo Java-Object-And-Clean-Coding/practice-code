@@ -11,15 +11,15 @@ public class NumberBaseballGameRepository {
         this.numberBaseballGame = new NumberBaseballGame();
     }
 
-    public List<Integer> getRandomNumbers() {
+    public List<Integer> findRandomNumbers() {
         return numberBaseballGame.getRandomNumbers();
     }
 
-    public List<Integer> getGameResult() {
+    public List<Integer> findGameResult() {
         return numberBaseballGame.getGameResult();
     }
 
-    public void setGameResult(List<Integer> gameResult) {
-        numberBaseballGame.setGameResult(gameResult);
+    public void updateGameResult(List<Integer> gameResult) {
+        numberBaseballGame.updateGameResult(gameResult);
     }
 }
