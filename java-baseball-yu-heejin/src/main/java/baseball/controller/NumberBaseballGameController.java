@@ -13,7 +13,6 @@ public class NumberBaseballGameController {
 
     public List<Integer> restartGame(String number) {
         baseballGameService.updateRandomNumbers();
-        System.out.println(baseballGameService.findRandomNumbers());
         return startGame(number);
     }
 

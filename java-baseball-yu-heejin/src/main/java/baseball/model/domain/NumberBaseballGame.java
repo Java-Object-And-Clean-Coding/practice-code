@@ -28,9 +28,8 @@ public class NumberBaseballGame {
         return gameResult;
     }
 
-    public List<Integer> clearRandomNumbers() {
+    public void clearRandomNumbers() {
         this.gameResult = Arrays.asList(INIT_RESULT_VALUE, INIT_RESULT_VALUE);
-        return gameResult;
     }
 
     public void updateGameResult(List<Integer> gameResult) {

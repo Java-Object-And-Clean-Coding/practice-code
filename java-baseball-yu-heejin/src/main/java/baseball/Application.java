@@ -30,11 +30,11 @@ public class Application {
             if (isContinue.equals(INIT_ANSWER)) {
                 List<Integer> gameResult = numberBaseballGameController.startGame(number);
                 outputView.printGameResult(gameResult);
-                checkGameResult(gameResult);
+                isContinue = checkGameResult(gameResult);
             } else {
                 List<Integer> gameResult = numberBaseballGameController.restartGame(number);
                 outputView.printGameResult(gameResult);
-                checkGameResult(gameResult);
+                isContinue = checkGameResult(gameResult);
             }
         } while (!isContinue.equals(NO_CONTINUE_ANSWER));
     }
