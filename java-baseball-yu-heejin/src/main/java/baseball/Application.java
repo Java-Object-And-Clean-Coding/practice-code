@@ -38,9 +38,10 @@ public class Application {
     private static void checkStartOrRestart(String number) {
         if (isContinue.equals(INIT_ANSWER)) {
             runStartGame(number);
-        } else {
-            runRestartGame(number);
+            return;
         }
+
+        runRestartGame(number);
     }
 
     private static void runStartGame(String number) {
