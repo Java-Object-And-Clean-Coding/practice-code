@@ -15,28 +15,44 @@ public class Application {
     private static OutputView outputView;
     private static InputUI inputUI;
     private static NumberBaseballGameController numberBaseballGameController;
+    private static String isContinue;
 
     public static void main(String[] args) {
-        outputView = new OutputView();
-        inputUI = new InputUI();
-        numberBaseballGameController = new NumberBaseballGameController();
-        String isContinue = INIT_ANSWER;
+        init();
 
         outputView.printGameStartMessage();
 
         do {
             String number = inputUserNumber();
-
-            if (isContinue.equals(INIT_ANSWER)) {
-                List<Integer> gameResult = numberBaseballGameController.startGame(number);
-                outputView.printGameResult(gameResult);
-                isContinue = checkGameResult(gameResult);
-            } else {
-                List<Integer> gameResult = numberBaseballGameController.restartGame(number);
-                outputView.printGameResult(gameResult);
-                isContinue = checkGameResult(gameResult);
-            }
+            checkStartOrRestart(number);
         } while (!isContinue.equals(NO_CONTINUE_ANSWER));
+    }
+
+    private static void init() {
+        outputView = new OutputView();
+        inputUI = new InputUI();
+        numberBaseballGameController = new NumberBaseballGameController();
+        isContinue = INIT_ANSWER;
+    }
+
+    private static void checkStartOrRestart(String number) {
+        if (isContinue.equals(INIT_ANSWER)) {
+            runStartGame(number);
+        } else {
+            runRestartGame(number);
+        }
+    }
+
+    private static void runStartGame(String number) {
+        List<Integer> gameResult = numberBaseballGameController.startGame(number);
+        outputView.printGameResult(gameResult);
+        checkGameResult(gameResult);
+    }
+
+    private static void runRestartGame(String number) {
+        List<Integer> gameResult = numberBaseballGameController.restartGame(number);
+        outputView.printGameResult(gameResult);
+        checkGameResult(gameResult);
     }
 
     private static String inputUserNumber() {
@@ -46,15 +62,13 @@ public class Application {
         return number;
     }
 
-    private static String checkGameResult(List<Integer> gameResult) {
-        String isContinue = INIT_ANSWER;
+    private static void checkGameResult(List<Integer> gameResult) {
+        isContinue = INIT_ANSWER;
 
         if (gameResult.get(STRIKE_INDEX) == PERFECT_STRIKE) {
             outputView.printGameSuccessMessage();
             outputView.printIsContinueMessage();
             isContinue = inputUI.inputIsContinue();
         }
-
-        return isContinue;
     }
 }
