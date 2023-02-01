@@ -15,12 +15,22 @@ public class Application {
         outputView = new OutputView();
         inputUI = new InputUI();
         numberBaseballGameController = new NumberBaseballGameController();
+        String isContinue = "1";
 
         outputView.printGameStartMessage();
 
-        outputView.printInputNumberMessage();
-        String number = inputUI.inputUserNumber();
+        while (isContinue.equals("1")) {
+            outputView.printInputNumberMessage();
+            String number = inputUI.inputUserNumber();
 
-        List<Integer> gameResult = numberBaseballGameController.startGame(number);
+            List<Integer> gameResult = numberBaseballGameController.startGame(number);
+            outputView.printGameResult(gameResult);
+
+            if (gameResult.get(0) == 3) {
+                outputView.printGameSuccessMessage();
+                outputView.printIsContinueMessage();
+                isContinue = inputUI.inputIsContinue();
+            }
+        }
     }
 }
