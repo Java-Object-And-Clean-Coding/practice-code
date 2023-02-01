@@ -21,6 +21,10 @@ public class NumberBaseballGameService {
         return numberBaseballGameRepository.findRandomNumbers();
     }
 
+    public void updateRandomNumbers() {
+        numberBaseballGameRepository.updateRandomNumbers();
+    }
+
     public List<Integer> findGameResult(List<Integer> randomNumbers, String number) {
         return createGameResult(randomNumbers, number);
     }

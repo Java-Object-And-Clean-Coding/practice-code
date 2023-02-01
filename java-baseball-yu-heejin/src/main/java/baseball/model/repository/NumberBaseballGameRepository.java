@@ -22,4 +22,8 @@ public class NumberBaseballGameRepository {
     public void updateGameResult(List<Integer> gameResult) {
         numberBaseballGame.updateGameResult(gameResult);
     }
+
+    public void updateRandomNumbers() {
+        numberBaseballGame.updateRandomNumbers();
+    }
 }
