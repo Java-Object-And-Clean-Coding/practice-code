@@ -16,7 +16,7 @@ public class NumberBaseballGame {
     private List<Integer> gameResult;
 
     public NumberBaseballGame() {
-        this.randomNumbers =  new ArrayList<>(Randoms.pickUniqueNumbersInRange(MIN_NUMBER_RANGE, MAX_NUMBER_RANGE, MAX_NUMBER_SIZE));
+        this.randomNumbers = new ArrayList<>(Randoms.pickUniqueNumbersInRange(MIN_NUMBER_RANGE, MAX_NUMBER_RANGE, MAX_NUMBER_SIZE));
         this.gameResult = Arrays.asList(INIT_RESULT_VALUE, INIT_RESULT_VALUE);
     }
 
@@ -28,12 +28,15 @@ public class NumberBaseballGame {
         return gameResult;
     }
 
-    public List<Integer> clearRandomNumbers() {
+    public void clearRandomNumbers() {
         this.gameResult = Arrays.asList(INIT_RESULT_VALUE, INIT_RESULT_VALUE);
-        return gameResult;
     }
 
     public void updateGameResult(List<Integer> gameResult) {
         this.gameResult = gameResult;
+    }
+
+    public void updateRandomNumbers() {
+        this.randomNumbers = new ArrayList<>(Randoms.pickUniqueNumbersInRange(MIN_NUMBER_RANGE, MAX_NUMBER_RANGE, MAX_NUMBER_SIZE));
     }
 }
