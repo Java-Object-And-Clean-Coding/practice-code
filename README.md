@@ -6,7 +6,7 @@
 - 브랜치 명은 각자 깃허브 아이디로 해주시고, 작업 폴더 역시 각 깃허브 아이디로 구분해주세요.
 
 ## 공부 유무 체크하기! ✅
-| Name | Yu Hee Jin | Seo Yeon Lee |
+| Name | Yu Hee Jin | Lee Seo Yeon |
 | --- | --- | --- |
 | 2주차 | O | X |
 | 3주차 | O | X |
