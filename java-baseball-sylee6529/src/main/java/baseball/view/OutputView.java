@@ -16,7 +16,7 @@ public class OutputView {
     }
 
     public void printRestartGameMessage() {
-        System.out.println();
+        System.out.println(OutputMessage.RESTART_GAME.getMessage());
     }
 
 }

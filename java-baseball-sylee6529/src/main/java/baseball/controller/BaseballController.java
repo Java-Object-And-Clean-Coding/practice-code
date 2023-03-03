@@ -13,7 +13,6 @@ public class BaseballController {
     private static final String QUIT_CODE = "2";
 
     private OutputView outputView = new OutputView();
-    private BaseballService baseballService = new BaseballService();
 
     ArrayList<Integer> randomNumberList;
     boolean isGameRestarted = true;
@@ -22,19 +21,19 @@ public class BaseballController {
         outputView.printStartGameMessage();
 
         while(isGameRestarted) {
+            BaseballService baseballService = new BaseballService();
             randomNumberList = new ArrayList<>(Randoms.pickUniqueNumbersInRange(1, 9, MAX_NUMBER_SIZE));
-//            System.out.println("--숫자 공개 test : " + randomNumberList);
+            System.out.println("--숫자 공개 test : " + randomNumberList);
 
             baseballService.playBaseBallGame(randomNumberList);
-
             outputView.printEndGameMessage();
-
             isGameRestarted = checkIsGameRestart();
         }
     }
 
     // TODO : Exception Message 정리
-    static boolean checkIsGameRestart() {
+    boolean checkIsGameRestart() {
+        outputView.printRestartGameMessage();
         String inputNumber = Console.readLine();
 
         if(inputNumber.equals(RESTART_CODE)) {

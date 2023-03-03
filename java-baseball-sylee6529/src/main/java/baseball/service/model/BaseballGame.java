@@ -7,7 +7,6 @@ public class BaseballGame {
     private boolean isFinish;
 
     public BaseballGame() {
-        inputNumber = getInputNumberFromConsole();
         isFinish = false;
     }
 
@@ -23,9 +22,7 @@ public class BaseballGame {
         this.isFinish = isFinish;
     }
 
-    public String getInputNumberFromConsole() {
-        System.out.println("before input");
-        String input = Console.readLine();
-        return input;
+    public void getInputNumberFromConsole() {
+        inputNumber = Console.readLine();
     }
 }

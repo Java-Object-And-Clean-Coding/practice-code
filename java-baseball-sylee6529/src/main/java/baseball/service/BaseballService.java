@@ -15,6 +15,7 @@ public class BaseballService {
 
     private OutputView outputView = new OutputView();
     private BaseballGame baseballGame = new BaseballGame();
+
     public void playBaseBallGame(ArrayList<Integer> randomNumberList) {
         while(!baseballGame.getIsFinish()) {
             outputView.printInputValueMessage();
@@ -25,7 +26,7 @@ public class BaseballService {
             validateInputNumber(inputNumber);
 
             // TODO : GameResult Class 분리
-            if(!getGameResult(randomNumberList, inputNumber)) {
+            if(getGameResult(randomNumberList, inputNumber)) {
                 baseballGame.setIsFinish(true);
             }
 
