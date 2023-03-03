@@ -2,8 +2,10 @@ package baseball.service;
 
 import baseball.controller.BaseballController;
 import baseball.service.model.BaseballGame;
+import baseball.view.InputView;
 import baseball.view.OutputView;
 import camp.nextstep.edu.missionutils.Console;
+import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,12 +15,13 @@ import java.util.Set;
 public class BaseballService {
     private static final int MAX_NUMBER_SIZE = 3;
 
+    private InputView inputView = new InputView();
     private OutputView outputView = new OutputView();
     private BaseballGame baseballGame = new BaseballGame();
 
     public void playBaseBallGame(ArrayList<Integer> randomNumberList) {
         while(!baseballGame.getIsFinish()) {
-            outputView.printInputValueMessage();
+            inputView.printInputValueMessage();
 
             baseballGame.getInputNumberFromConsole();
             String inputNumber = baseballGame.getInputNumber();
@@ -28,6 +31,7 @@ public class BaseballService {
             // TODO : GameResult Class 분리
             if(getGameResult(randomNumberList, inputNumber)) {
                 baseballGame.setIsFinish(true);
+                outputView.printEndGameMessage();
             }
 
         }

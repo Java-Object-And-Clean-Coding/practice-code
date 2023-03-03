@@ -1,6 +1,7 @@
 package baseball.controller;
 
 import baseball.service.BaseballService;
+import baseball.view.InputView;
 import baseball.view.OutputView;
 import camp.nextstep.edu.missionutils.Console;
 import camp.nextstep.edu.missionutils.Randoms;
@@ -12,28 +13,26 @@ public class BaseballController {
     private static final String RESTART_CODE = "1";
     private static final String QUIT_CODE = "2";
 
+    private InputView inputView = new InputView();
     private OutputView outputView = new OutputView();
-
-    ArrayList<Integer> randomNumberList;
     boolean isGameRestarted = true;
 
     public void initRepeatedBaseballGame() {
         outputView.printStartGameMessage();
 
-        while(isGameRestarted) {
-            BaseballService baseballService = new BaseballService();
-            randomNumberList = new ArrayList<>(Randoms.pickUniqueNumbersInRange(1, 9, MAX_NUMBER_SIZE));
+        do {
+            ArrayList<Integer> randomNumberList = new ArrayList<>(Randoms.pickUniqueNumbersInRange(1, 9, MAX_NUMBER_SIZE));
             System.out.println("--숫자 공개 test : " + randomNumberList);
 
+            BaseballService baseballService = new BaseballService();
             baseballService.playBaseBallGame(randomNumberList);
-            outputView.printEndGameMessage();
+            inputView.printRestartGameMessage();
             isGameRestarted = checkIsGameRestart();
-        }
+        } while(isGameRestarted);
     }
 
     // TODO : Exception Message 정리
     boolean checkIsGameRestart() {
-        outputView.printRestartGameMessage();
         String inputNumber = Console.readLine();
 
         if(inputNumber.equals(RESTART_CODE)) {

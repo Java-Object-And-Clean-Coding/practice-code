@@ -1,5 +1,6 @@
 package baseball.view;
 
+import baseball.view.model.InputMessage;
 import baseball.view.model.OutputMessage;
 
 public class OutputView {
@@ -11,12 +12,6 @@ public class OutputView {
         System.out.println(OutputMessage.END_GAME.getMessage());
     }
 
-    public void printInputValueMessage() {
-        System.out.print(OutputMessage.INPUT_NUMBER.getMessage());
-    }
 
-    public void printRestartGameMessage() {
-        System.out.println(OutputMessage.RESTART_GAME.getMessage());
-    }
 
 }
